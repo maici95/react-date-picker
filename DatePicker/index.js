@@ -56,11 +56,6 @@ export default function DatePicker(props) {
         setCalendarOpen(!calendarOpen);
     }
 
-/*     function renderCalendar() {
-        const days = Array(31).fill(0).map((item, index) => index + 1);
-        setCalendarDays(days);
-    } */
-
     function setDays() {
         const date = new Date(year, month - 1, 0);
         const days = date.getDate();
@@ -74,29 +69,35 @@ export default function DatePicker(props) {
 
     function checkDate(event) {
         let color = '#333';
-            const date = new Date(event.target.value).toString();
-            if (date === 'Invalid Date') {
-                color = '#CC3300';
-                console.log(date);
-            }
-            event.target.style.color = color;
+        const date = new Date(event.target.value).toString();
+        if (date === 'Invalid Date') {
+            color = '#CC3300';
+        }
+        event.target.style.color = color;
+        props.onChange(event.target.value);        
     }
     
     function selectDate(day) {
-        const selectedDate = `${year}-${(month < 10 ? '0' : '') + month}-${(day < 10 ? '0' : '') + day}`;
+        const selectedDate = getDate(day);
         dateRef.current.value = selectedDate;
         setCalendarOpen(false);
+        props.onChange(selectedDate);
+    }
+
+    function getDate(day) {
+        return `${year}-${(month < 10 ? '0' : '') + month}-${(day < 10 ? '0' : '') + day}`;
     }
 
     return (
-        <>
+        <div className="calendar-panel-container">
             <button
                 className="calendar-btn"
                 onClick={openCalendar}
             >
                 <span role="img" aria-label="calendar">&#128198;</span>
             </button>
-            <input className="calendar-input"
+            <input
+                className="calendar-input"
                 ref={dateRef}
                 placeholder={props.placeholder || ''}
                 name={props.name || ''}
@@ -112,14 +113,21 @@ export default function DatePicker(props) {
                     <div className="calendar-days">
                         {['S','M','T','W','T','F','S'].map((day, index) => {
                             return (
-                                <div key={index} className="calendar-day-header">
+                                <div
+                                    key={index}
+                                    className="calendar-day-header"
+                                >
                                     {day}
                                 </div>
                             );
                         })}
                         {calendarDays.map((day, index) => {
                             return (
-                                <div key={index} className="calendar-day" onClick={day !== '' ? () => selectDate(day) : null}>
+                                <div
+                                    key={index}
+                                    className="calendar-day"
+                                    onClick={day !== '' ? () => selectDate(day) : null}
+                                >
                                     {day}
                                 </div>
                             );
@@ -127,6 +135,6 @@ export default function DatePicker(props) {
                     </div>
                 </div>
             }
-        </>
+        </div>
     );
 }

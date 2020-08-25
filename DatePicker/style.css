@@ -3,6 +3,10 @@
 
 
 
+.calendar-panel-container {
+    display: flex;
+}
+
 .calendar-btn,
 .calendar-input,
 .calendar-header button
@@ -17,7 +21,6 @@
 }
 
 .calendar-btn {
-    float: left;
     height: 34px;
     border-right: 0;
 }
@@ -26,7 +29,6 @@
     cursor: pointer;
 }
 .calendar-input {
-    float: left;
     height: 30px;
     width: 200px;
     padding-left: 10px;
