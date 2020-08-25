@@ -1,0 +1,166 @@
+
+
+
+
+
+.calendar-btn,
+.calendar-input,
+.calendar-header button
+{
+    border: 1px solid #ddd;
+}
+
+.calendar-btn:focus,
+.calendar-input:focus,
+.calendar-header button:focus {
+    outline: 0;
+}
+
+.calendar-btn {
+    float: left;
+    height: 34px;
+    border-right: 0;
+}
+.calendar-btn:hover {
+    background: #ddd;
+    cursor: pointer;
+}
+.calendar-input {
+    float: left;
+    height: 30px;
+    width: 200px;
+    padding-left: 10px;
+}
+.calendar-container {
+    position: absolute;
+    margin-top: 36px;
+    overflow: auto;
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 5px
+}
+.calendar-header {
+    width: 100%;
+    display: flex;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+.calendar-header span {
+    width: 100px;
+    text-align: center;
+}
+.calendar-days {
+    display: flex;
+    flex-wrap: wrap;
+}
+.calendar-day,
+.calendar-day-header
+{
+    flex: 11%;
+    max-width: 12%;
+    padding: 2px;
+    border: 1px solid #ddd;
+    margin: 1px;
+    text-align: center;
+}
+.calendar-day-header {
+    background: #ddd;
+}
+.calendar-day:hover {
+    cursor: pointer;
+    background: #CE3175;
+    color: #fff;
+    text-shadow: 1px 1px 0px #000;
+}
+
+
+
+/* 
+.calendar-btn {
+    float: left;
+
+    height: 44px;
+
+    background: #f5f5f5;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    border: 1px solid #ddd;
+}
+.calendar-btn:hover {
+    background: #f1f1f1;
+}
+
+
+.calendar-input {
+    float: left;
+
+    height: 40px;
+    padding-left: 10px;
+    width: 100px!important;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    border: 1px solid #ddd;
+
+    border-left: 0;
+}
+
+
+.calendar-header {
+    display: flex;
+    margin-bottom: 10px;
+}
+.calendar-header span {
+    width: 100px;
+    text-align: center;
+}
+
+.calendar-container {
+    margin-top: 50px;
+    position: absolute;
+    overflow: auto;
+    width: 300px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.calendar-container input {
+    width: 280px!important;
+    padding: 10px;
+}
+
+.calendar-days {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 200px;
+}
+
+.calendar-day {
+    flex: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 13%;
+    float: left;
+    margin: 1px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.calendar-day:hover {
+    cursor: pointer;
+    background: #F03A17;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+ */
